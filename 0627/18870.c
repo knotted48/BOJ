@@ -71,9 +71,14 @@ int main(void) {
 		cnt++;
 	}
 	
+	free(sorted);
+	
 	for (int i = 0; i < n; i++) {
 		printf("%d ", BinarySearch(ordered, cnt - 1, arr[i]));
 	}
+	
+	free(ordered);
+	free(arr);
 	
 	return 0;
 }
