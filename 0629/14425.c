@@ -54,11 +54,10 @@ int BinarySearch(char *arr[], int end, char str[]) {
 
 int main(void) {
 	int n, m, cnt = 0;
-	char **set, **arr;
+	char **set, str[501];
 	
 	scanf("%d%d", &n, &m);
 	set = (char**)malloc(sizeof(char*) * n);
-	arr = (char**)malloc(sizeof(char*) * m);
 	
 	for (int i = 0; i < n; i++) {
 		set[i] = (char*)malloc(sizeof(char) * 501);
@@ -68,9 +67,8 @@ int main(void) {
 	HeapSort(set, n);
 	
 	for (int i = 0; i < m; i++) {
-		arr[i] = (char*)malloc(sizeof(char) * 501);
-		scanf("%s", arr[i]);
-		if (BinarySearch(set, n - 1, arr[i]))
+		scanf("%s", str);
+		if (BinarySearch(set, n - 1, str))
 			cnt++;
 	}
 	
